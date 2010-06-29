@@ -1,7 +1,3 @@
-MongoMapper.database = "ideamachine-#{Rails.env}"
-
-if defined?(PhusionPassenger)
-   PhusionPassenger.on_event(:starting_worker_process) do |forked|
-     MongoMapper.connection.connect_to_master if forked
-   end
-end
+MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com',  27037, :auto_reconnect => true) 
+MongoMapper.database = "ideamachiner-production"
+MongoMapper.database.authenticate('keithnorm', 'pediddle')
