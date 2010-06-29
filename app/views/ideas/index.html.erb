@@ -1,0 +1,27 @@
+<h1>Listing ideas</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ideas.each do |idea| %>
+  <tr>
+    <td><%= idea.title %> </td>
+    <td>Votes: <%= idea.votes.count %></td>
+    <td>
+      <%= form_for idea.votes.build, :url => idea_votes_path(idea._id) do |f| %>
+        <%= f.hidden_field :genius_id, :value => 1 %>
+        <%= f.submit 'Vote' %>
+      <% end -%>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Idea', new_idea_path %>
