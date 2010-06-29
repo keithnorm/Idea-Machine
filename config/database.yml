@@ -1,0 +1,9 @@
+development: 
+  database: idea_machine_development
+  
+production:
+  database: ideamachiner-production
+  host: flame.mongohq.com
+  port: 27037
+  user: ideamachiner
+  password: ideamachiner
