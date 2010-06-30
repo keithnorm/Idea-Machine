@@ -16,7 +16,7 @@ test:
   database: control_test
 
 # set these environment variables on your prod server
-development:
+production:
   <<: *defaults
   database: ideamachiner-production
   host: flame.mongohq.com
