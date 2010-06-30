@@ -1,10 +1,8 @@
 class Vote
   
-  include MongoMapper::EmbeddedDocument
-  include CounterCache
+  include Mongoid::Document
+  include CounterCache  
   
-  key :genius_id, ObjectId
-  
-  belongs_to :idea
+  embedded_in :idea, :inverse_of => :votes
   
 end

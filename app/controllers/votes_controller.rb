@@ -5,7 +5,7 @@ class VotesController < ApplicationController
     @vote = Vote.new({:genius_id => 1})
     @idea.votes << @vote
     @idea.save
-    redirect_to ideas_path
+    redirect_to :back
   end
   
 end

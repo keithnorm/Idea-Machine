@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @idea.title %>: <small><%= @idea.votes.count %> votes</h1>
+  <%= form_for @idea.votes.build, :url => idea_votes_path(@idea._id) do |f| %>
+    <%= f.hidden_field :genius_id, :value => 1 %>
+    <%= f.submit 'Vote' %>
+  <% end -%>
+<p><%= @idea.description %></p>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>

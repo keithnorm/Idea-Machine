@@ -2,7 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
 
-gem 'mongo_mapper'
+gem 'mongoid'
+
+gem 'devise', '1.1.rc2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

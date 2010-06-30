@@ -1,8 +1,11 @@
 class IdeasController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /ideas
   # GET /ideas.xml
   def index
-    @ideas = Idea.all(:order => 'votes_counter_cache DESC')
+    @ideas = Idea.all
 
     respond_to do |format|
       format.html # index.html.erb

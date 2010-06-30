@@ -1,8 +1,13 @@
 IdeaMachine::Application.routes.draw do |map|
+  devise_for :users
+
   
   resources :ideas do
     resources :votes
   end
+  
+  root :to => "ideas#index"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

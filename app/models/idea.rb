@@ -1,13 +1,13 @@
 class Idea
-  include MongoMapper::Document
+  include Mongoid::Document
   include CounterCache
   
-  key :title, String
-  key :description, String
-  key :genius_id, Integer
-  key :votes_counter_cache, Integer, :default => 0, :index => true
+  field :title
+  field :description
+  field :genius_id
+  field :votes_counter_cache, :type => Integer
   
-  has_many :votes
+  embeds_many :votes
   
   
     
