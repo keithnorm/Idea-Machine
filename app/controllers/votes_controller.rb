@@ -5,7 +5,11 @@ class VotesController < ApplicationController
     @vote = Vote.new({:genius_id => 1})
     @idea.votes << @vote
     @idea.save
-    redirect_to :back
+    
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { @idea }
+    end
   end
   
 end

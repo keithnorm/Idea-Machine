@@ -47,5 +47,15 @@ module IdeaMachine
     config.filter_parameters += [:password]
     
     config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "ideamachine.heroku.com",
+      :user_name            => "ideamachiner@gmail.com",
+      :password             => "theinternet",
+      :authentication       => "plain",
+      :enable_starttls_auto => true }
   end
 end

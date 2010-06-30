@@ -7,8 +7,12 @@ class Idea
   field :genius_id
   field :votes_counter_cache, :type => Integer
   
+  key :title
+  
   embeds_many :votes
   
-  
+  def to_param
+    id
+  end  
     
 end
