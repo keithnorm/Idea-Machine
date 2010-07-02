@@ -1,7 +1,7 @@
 development: 
   database: idea_machine_development
   
-production:
+development:
   database: ideamachiner-production
   host: flame.mongohq.com
   port: 27037

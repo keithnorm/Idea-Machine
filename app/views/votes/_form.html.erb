@@ -1,0 +1,9 @@
+<%= form_for idea.votes.build, :url => idea_votes_path(idea) do |f| %>
+  <%= f.hidden_field :value, :value => 1 %>
+  <%= f.submit 'Up' %>
+<% end -%>
+
+<%= form_for idea.votes.build, :url => idea_votes_path(idea) do |f| %>
+  <%= f.hidden_field :value, :value => -1 %>
+  <%= f.submit 'Down' %>
+<% end -%>

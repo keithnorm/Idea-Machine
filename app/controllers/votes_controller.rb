@@ -2,9 +2,7 @@ class VotesController < ApplicationController
   
   def create
     @idea = Idea.find(params[:idea_id])
-    @vote = Vote.new({:genius_id => 1})
-    @idea.votes << @vote
-    @idea.save
+    @idea.votes.create(params[:vote].merge(:user => current_user))
     
     respond_to do |format|
       format.html { redirect_to :back }
