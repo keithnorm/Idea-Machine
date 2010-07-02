@@ -1,3 +1,7 @@
+require 'machinist'
+require 'machinist/mongoid' # or mongoid
+require 'sham'
+
 IdeaMachine::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 

@@ -1,9 +1,3 @@
-require 'machinist'
-require 'machinist/mongoid' # or mongoid
-require 'sham'
-
-puts Rails.env
-
 Idea.blueprint do
   title { 'Some Idea' }
   votes_counter_cache { 0 }
